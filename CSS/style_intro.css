@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root{
+    --background-color: rgb(31,31,33);
+    --color-principal: rgb(237,135,60);
+    --color-texto: rgb(255,255,255);
+    --color-hover: rgb(243,175,125);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color:var(--background-color);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    color: var(--color-texto); 
+    background-color: var(--background-color);
+}
+
+header .contenedor{
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+header .menu{
+    height: auto;
+    background-color: var(--background-color);
+}
+
+header .menu ul{
+    display: flex;
+    flex-direction: row;
+}
+
+header .menu li{
+    list-style: none;
+    margin: 25px;
+}
+
+header .menu a{
+    color: var(--color-texto);
+    text-decoration: none;
+
+}
+
+header .menu a:hover{
+    color: var(--color-principal);
+    transition: color 0.3s ease;
+}
+
+header .controles-usuario{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    order: 1;
+}
+
+header .controles-usuario ion-icon{
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--color-principal);
+}
+
+header .controles-usuario ion-icon:hover{
+    color: var(--color-hover);
+    transition: color 0.2s ease;
+}
+
+header #btn-sign-up{
+    border: none;
+    cursor: pointer;
+    width: 110px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+header #btn-sign-up:hover{
+    background-color: var(--color-hover);
+
+}
+
+header #btn-menu{
+    display: none;
+}
+
+@media (max-width: 890px){
+    header #btn-menu{
+        display: block;
+    }
+    header .menu{
+        height: 0;
+        overflow: hidden;
+        border-bottom: 2px solid var(--color-principal);
+        transition: height 0.5s ease;
+    }
+    header .menu.mostrar{
+        height: 350px;
+    }
+    header .menu.min{
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    header .menu ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    @media (max-width:373px){
+        header .logo img{
+            display: none;
+        }
+        header .logo span{
+            font-size: 25px;
+        }
+    }
+}
